@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:ital,wght@0,400;0,700;1,700&family=Ubuntu:ital,wght@0,300;0,700;1,700&display=swap');
+
+/* Geral */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #202020;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+button {
+    background-color: #FDFDFD;
+    color: #102F5E;
+    border: 2px solid #102F5E;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+    margin-top: 2px;
+}
+
+button:hover {
+    background-color: #102F5E;
+}
+
+button:hover > i {
+    color: #fff;
+}
+
+button i {
+    margin-top: 2px;
+    color: #102F5E;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+input, select {
+    padding: 0.5rem 0.5rem ;
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+input::placeholder {
+    font-size: 0.9rem;
+}
+
+.hide {
+    display: none;
+}
+
+/* Todo header */
+.todo-container {
+    max-width: 450px;
+    margin: 3rem auto;
+    background-color: #FDFDFD;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.todo-container header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #CCC;
+}
+
+/* Todo form */
+#todo-form, #edit-form {
+    padding: 1rem;
+    border-bottom: 1px solid #CCC;
+}
+
+#edit-form p {
+    margin-bottom: 0.5rem;
+}
+
+#todo-form p,
+#todo-edit p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control {
+    display: flex;
+}
+
+.form-control input {
+    margin-right: 0.3rem;
+}
+
+#cancel-edit-btn {
+    margin-top: 1rem;
+}
+
+#cancel-edit-btn:hover {
+    color: #fff;
+}
+
+/* Todo toolbar */
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid #CCC;
+    display: flex;
+}
+
+#toolbar h4 {
+    margin-bottom: .5rem;
+}
+
+#search {
+    border-right: 1px solid #DDD;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#search form {
+    display: flex;
+}
+
+#search input {
+    width: 100%;
+    margin-right: .3rem;
+}
+
+#filter {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter select {
+    flex: 1;
+}
+
+/* Todo List */
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #DDD;
+    transition: .3s;
+}
+
+.todo h3 {
+    flex: 1;
+    font-size: 1.2rem;
+}
+
+.todo button {
+    margin-left: 0.4rem;
+}
+
+.done {
+    background-color: #8B7ADE;
+}
+
+.done h3 {
+    color: #fff;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+#toolbar.hide {
+    display: none;
+}
+
+.icon-container {
+    position: relative;
+}
+
+.tooltip {
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    width: 125px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 0.3s;
+    transform: translateX(0);
+    bottom: 35px;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.finish-todo:hover .tooltip,
+.edit-todo:hover .tooltip,
+.remove-todo:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+button {
+    position: relative;
+}
+
+.tooltip-btn-principais {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(0);
+    left: 60%;
+    bottom: 40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+button:hover .tooltip-btn-principais {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-btn-principais::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 8%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Mídia Query para telas menores */
+@media (max-width: 450px) {
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .todo-container {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+
+    .form-control {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    
+    #search {
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    #toolbar {
+        display: inline-block;
+    }
+
+    #search {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #search form {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        margin-bottom: 1rem;
+    }
+
+    #filter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+
+    #filter select {
+        flex: auto;
+    }
+
+    #todo-form input {
+        width: 100%;
+        padding: 9px 11px;
+    }
+
+    #toolbar {
+        width: 100%;
+    }
+
+    #toolbar input {
+        max-width: 100%;
+        padding: 9px 11px;
+    }
+
+    #edit-form #edit-input input {
+        max-width: 100%;
+        padding: 9px 11px;
+    }
+
+    #toolbar select {
+        max-width: 100%;
+        margin-top: 3px;
+        padding: 9px 11px;
+    }
+
+    button:hover .tooltip,
+    button:hover .tooltip-btn-principais {
+        display: none;
+    }
+}
