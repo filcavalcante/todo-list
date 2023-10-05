@@ -75,6 +75,7 @@ input::placeholder {
 }
 
 .todo-container {
+    min-width: 450px;
     max-width: 450px;
     margin: 3rem auto;
     background-color: #FDFDFD;
@@ -220,13 +221,14 @@ input::placeholder {
     transition: opacity 0.3s;
     transform: translateX(0);
     bottom: 35px;
+    right: 16px;
 }
 
 .tooltip::after {
     content: "";
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 92%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
@@ -255,7 +257,7 @@ button {
     position: absolute;
     z-index: 1;
     transform: translateX(0);
-    left: 60%;
+    right: 60%;
     bottom: 40px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -270,7 +272,7 @@ button:hover .tooltip-btn-principais {
     content: "";
     position: absolute;
     top: 100%;
-    left: 8%;
+    right: 4%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
@@ -290,7 +292,6 @@ button:hover .tooltip-btn-principais {
 
     .form-control {
         width: 100%;
-        /* padding: 1rem; */
     }
     
     #search {
