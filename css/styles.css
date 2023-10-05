@@ -52,6 +52,7 @@ button i {
 }
 
 input, select {
+    border: 2px solid #102F5E;
     padding: 0.5rem 0.5rem ;
     font-size: 1rem;
     margin-top: 2px;
@@ -65,13 +66,21 @@ input::placeholder {
     display: none;
 }
 
-/* Todo header */
+.container-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
 .todo-container {
     max-width: 450px;
     margin: 3rem auto;
     background-color: #FDFDFD;
     padding: 1.5rem;
     border-radius: 15px;
+    overflow: auto;
 }
 
 .todo-container header {
@@ -102,6 +111,14 @@ input::placeholder {
 
 .form-control input {
     margin-right: 0.3rem;
+}
+
+#edit-form .form-control input {
+    width: 100%;
+}
+
+#todo-input {
+    width: 100%;
 }
 
 #cancel-edit-btn {
@@ -261,32 +278,23 @@ button:hover .tooltip-btn-principais {
 }
 
 /* Mídia Query para telas menores */
-@media (max-width: 450px) {
-
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
+@media (max-width: 768px) {
 
     .todo-container {
+        overflow: auto;
         height: 100%;
         width: 100%;
         padding-bottom: 1rem;
+        overflow-x: hidden;
     }
 
     .form-control {
-        width: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: stretch;
+        width: 100%;
+        /* padding: 1rem; */
     }
     
     #search {
         border-right: none;
-        padding-right: 0;
-        margin-right: 0;
     }
 
     #toolbar {
@@ -297,6 +305,8 @@ button:hover .tooltip-btn-principais {
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-right: 0;
+        padding-right: 0;
     }
 
     #search form {
@@ -335,7 +345,7 @@ button:hover .tooltip-btn-principais {
         padding: 9px 11px;
     }
 
-    #edit-form #edit-input input {
+     #edit-input {
         max-width: 100%;
         padding: 9px 11px;
     }
@@ -349,5 +359,11 @@ button:hover .tooltip-btn-principais {
     button:hover .tooltip,
     button:hover .tooltip-btn-principais {
         display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .todo-container {
+        overflow-x: hidden;
     }
 }
