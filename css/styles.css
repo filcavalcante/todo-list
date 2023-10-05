@@ -8,10 +8,13 @@
     font-family: 'Montserrat', sans-serif;
     color: #202020;
     box-sizing: border-box;
+    font-size: 1.6rem;
 }
 
 html {
     height: 100vh;
+    width: 100%;
+    font-size: 62.5%;
 }
 
 body {
@@ -25,15 +28,15 @@ body {
 button {
     background-color: #FDFDFD;
     color: #102F5E;
-    border: 2px solid #102F5E;
-    padding: .3rem .6rem;
-    font-size: 1rem;
+    border: 0.2rem solid #102F5E;
+    padding: 1rem 1rem;
+    font-size: 1.3rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: .4s;
-    margin-top: 2px;
+    margin-top: 0.2rem;
 }
 
 button:hover {
@@ -45,21 +48,21 @@ button:hover > i {
 }
 
 button i {
-    margin-top: 2px;
+    margin-top: 0.2rem;
     color: #102F5E;
     font-weight: bold;
     pointer-events: none;
 }
 
 input, select {
-    border: 2px solid #102F5E;
+    border: 0.2rem solid #102F5E;
     padding: 0.5rem 0.5rem ;
-    font-size: 1rem;
-    margin-top: 2px;
+    font-size: 1.6rem;
+    margin-top: 0.2rem;
 }
 
 input::placeholder {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
 }
 
 .hide {
@@ -71,37 +74,44 @@ input::placeholder {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
     min-height: 100vh;
 }
 
 .todo-container {
-    min-width: 450px;
-    max-width: 450px;
-    margin: 3rem auto;
+    min-width: 45rem;
+    max-width: 45rem;
+    margin: 3rem 0 3rem 0;
     background-color: #FDFDFD;
     padding: 1.5rem;
-    border-radius: 15px;
-    overflow: auto;
+    border-radius: 1.5rem;
+}
+
+.todo-container h1 {
+    font-size: 4rem;
 }
 
 .todo-container header {
     text-align: center;
     padding: 0 1rem 1rem;
-    border-bottom: 1px solid #CCC;
+    border-bottom: 0.1rem solid #CCC;
 }
 
 /* Todo form */
 #todo-form, #edit-form {
     padding: 1rem;
-    border-bottom: 1px solid #CCC;
+    border-bottom: 0.1rem solid #CCC;
 }
 
 #edit-form p {
     margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 #todo-form p,
 #todo-edit p {
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
@@ -133,16 +143,17 @@ input::placeholder {
 /* Todo toolbar */
 #toolbar {
     padding: 1rem;
-    border-bottom: 1px solid #CCC;
+    border-bottom: 0.1rem solid #CCC;
     display: flex;
 }
 
 #toolbar h4 {
+    font-size: 1.8rem;
     margin-bottom: .5rem;
 }
 
 #search {
-    border-right: 1px solid #DDD;
+    border-right: 0.1rem solid #DDD;
     padding-right: 1rem;
     margin-right: 1rem;
     width: 65%;
@@ -175,13 +186,13 @@ input::placeholder {
     justify-content: space-around;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #DDD;
+    border-bottom: 0.1rem solid #DDD;
     transition: .3s;
 }
 
 .todo h3 {
     flex: 1;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 
 .todo button {
@@ -210,18 +221,18 @@ input::placeholder {
     display: flex;
     justify-content: center;
     visibility: hidden;
-    width: 125px;
+    width: 12.5rem;
     background-color: #555;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+    padding: 0.5rem 0;
+    border-radius: 0.6rem;
     position: absolute;
     z-index: 1;
     transition: opacity 0.3s;
     transform: translateX(0);
-    bottom: 35px;
-    right: 16px;
+    bottom: 3.5rem;
+    right: 1.6rem;
 }
 
 .tooltip::after {
@@ -229,8 +240,8 @@ input::placeholder {
     position: absolute;
     top: 100%;
     left: 92%;
-    margin-left: -5px;
-    border-width: 5px;
+    margin-left: -0.5rem;
+    border-width: 0.5rem;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
@@ -248,17 +259,17 @@ button {
 
 .tooltip-btn-principais {
     visibility: hidden;
-    width: 120px;
+    width: 12rem;
     background-color: #555;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+    padding: 0.5rem 0;
+    border-radius: 0.6rem;
     position: absolute;
     z-index: 1;
     transform: translateX(0);
     right: 60%;
-    bottom: 40px;
+    bottom: 4rem;
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -273,8 +284,8 @@ button:hover .tooltip-btn-principais {
     position: absolute;
     top: 100%;
     right: 4%;
-    margin-left: -5px;
-    border-width: 5px;
+    margin-left: -0.5rem;
+    border-width: 0.5rem;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
@@ -282,7 +293,20 @@ button:hover .tooltip-btn-principais {
 /* Mídia Query para telas menores */
 @media (max-width: 768px) {
 
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .todo-container {
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 1rem;
+        overflow-x: hidden;
+    }
+
+    .container-align {
         overflow: auto;
         height: 100%;
         width: 100%;
@@ -334,7 +358,7 @@ button:hover .tooltip-btn-principais {
 
     #todo-form input {
         width: 100%;
-        padding: 9px 11px;
+        padding: 0.9rem 1.1rem;
     }
 
     #toolbar {
@@ -343,18 +367,18 @@ button:hover .tooltip-btn-principais {
 
     #toolbar input {
         max-width: 100%;
-        padding: 9px 11px;
+        padding: 0.9rem 1.1rem;
     }
 
      #edit-input {
         max-width: 100%;
-        padding: 9px 11px;
+        padding: 0.9rem 1.1rem;
     }
 
     #toolbar select {
         max-width: 100%;
-        margin-top: 3px;
-        padding: 9px 11px;
+        margin-top: 0.3rem;
+        padding: 0.9rem 1.1rem;
     }
 
     button:hover .tooltip,
@@ -366,5 +390,32 @@ button:hover .tooltip-btn-principais {
 @media (min-width: 769px) {
     .todo-container {
         overflow-x: hidden;
+    }
+}
+
+@media (max-width: 500px) {
+    .todo-container h1 {
+        font-size: 2rem;
+    }
+
+    #todo-form p, 
+    #toolbar h4,
+    #edit-form p,
+    .todo h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .todo-container {
+        min-width: 40rem;
+        max-width: 40rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .todo-container {
+        min-width: 30rem;
+        max-width: 30rem;
     }
 }
