@@ -408,14 +408,7 @@ button:hover .tooltip-btn-principais {
 
 @media (max-width: 450px) {
     .todo-container {
-        min-width: 40rem;
-        max-width: 40rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .todo-container {
-        min-width: 30rem;
-        max-width: 30rem;
+        min-width: 100%;
+        max-width: 100%;
     }
 }
